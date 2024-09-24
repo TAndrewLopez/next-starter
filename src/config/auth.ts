@@ -1,4 +1,6 @@
+import db from "@/db";
 import { env } from "@/env/server";
+import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -6,6 +8,9 @@ const options: NextAuthOptions = {
   pages: {
     signIn: "/",
   },
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // ts-expect-error
+  adapter: DrizzleAdapter(db),
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,

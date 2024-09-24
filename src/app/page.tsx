@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const LandingPage = () => {
+const LandingPage = async () => {
   return (
     <Card className="mx-auto mt-4 w-[350px]">
       <CardHeader>

@@ -1,4 +1,5 @@
 import options from "@/config/auth";
+import { requireAuth } from "@/utils/require-auth";
 import { getServerSession } from "next-auth";
 import { FaRegUserCircle } from "react-icons/fa";
 
@@ -12,6 +13,7 @@ import {
 } from "@/components/ui/card";
 
 const ProfilePage = async () => {
+  await requireAuth();
   const session = await getServerSession(options);
 
   return (
