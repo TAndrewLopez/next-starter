@@ -9,8 +9,14 @@ const options: NextAuthOptions = {
     signIn: "/",
   },
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // ts-expect-error
+  // @ts-ignore: Type mismatch error
   adapter: DrizzleAdapter(db),
+  callbacks: {
+    session({ session, user }) {
+      session.user.id = user.id;
+      return session;
+    },
+  },
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,

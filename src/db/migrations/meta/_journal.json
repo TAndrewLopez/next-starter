@@ -5,43 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1727154239224,
-      "tag": "0000_perpetual_lockjaw",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1727154348536,
-      "tag": "0001_slow_energizer",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1727154609781,
-      "tag": "0002_little_darkhawk",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1727154769341,
-      "tag": "0003_romantic_doctor_faustus",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "7",
-      "when": 1727155254998,
-      "tag": "0004_low_firedrake",
-      "breakpoints": true
-    },
-    {
-      "idx": 5,
-      "version": "7",
-      "when": 1727155369617,
-      "tag": "0005_complete_albert_cleary",
+      "when": 1727192545240,
+      "tag": "0000_condemned_hobgoblin",
       "breakpoints": true
     }
   ]

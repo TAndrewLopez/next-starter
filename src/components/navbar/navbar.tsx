@@ -11,13 +11,16 @@ import { AuthButton } from "./auth-button";
 export const Navbar = () => {
   const { status } = useSession();
 
-  type PagesType = "/" | "/profile";
+  type PagesType = "/" | "/profile" | "/guestbook";
   type itemType = { label: string; href: PagesType };
 
   const menuItems: itemType[] = [{ label: "Home", href: "/" }];
 
   if (status === "authenticated") {
-    menuItems.push({ label: "Profile", href: "/profile" });
+    menuItems.push(
+      { label: "Profile", href: "/profile" },
+      { label: "Guestbook", href: "/guestbook" }
+    );
   }
 
   return (
