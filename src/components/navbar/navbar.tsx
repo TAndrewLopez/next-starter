@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { FiPackage } from "react-icons/fi";
 
-import { ModeToggle } from "../mode-toggle";
+import { ModeToggle } from "../dark-mode/mode-toggle";
 import { Button } from "../ui/button";
 
 export const Navbar = () => {
