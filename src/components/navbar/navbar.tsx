@@ -1,18 +1,24 @@
+"use client";
+
 import Link from "next/link";
 
+import { useSession } from "next-auth/react";
 import { FiPackage } from "react-icons/fi";
 
 import { ModeToggle } from "../dark-mode/mode-toggle";
 import { AuthButton } from "./auth-button";
 
 export const Navbar = () => {
+  const { status } = useSession();
+
   type PagesType = "/" | "/profile";
   type itemType = { label: string; href: PagesType };
 
-  const menuItems: itemType[] = [
-    { label: "Home", href: "/" },
-    { label: "Profile", href: "/profile" },
-  ];
+  const menuItems: itemType[] = [{ label: "Home", href: "/" }];
+
+  if (status === "authenticated") {
+    menuItems.push({ label: "Profile", href: "/profile" });
+  }
 
   return (
     <nav className="flex items-center justify-between p-4">
@@ -29,7 +35,7 @@ export const Navbar = () => {
       </ul>
       <div className="flex items-center gap-x-3">
         <ModeToggle />
-        <AuthButton />
+        <AuthButton minimal={false} />
       </div>
     </nav>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import { Navbar } from "@/components/navbar/navbar";
 import { Providers } from "@/components/providers/providers";
@@ -27,7 +28,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <main className="flex-1 overflow-auto bg-[url(/light-bg.svg)] bg-cover bg-repeat dark:bg-[url(/dark-bg.svg)]">
-            {children}
+            <Suspense>{children}</Suspense>
           </main>
         </Providers>
       </body>
