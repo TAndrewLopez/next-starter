@@ -8,12 +8,10 @@ type SetTheme = Dispatch<SetStateAction<Theme>>;
 export const useSystemTheme = () => {
   const { theme, setTheme, systemTheme } = useTheme();
 
-  return useMemo(
-    () =>
-      ({
-        theme: theme === "system" ? systemTheme : theme,
-        setTheme,
-      }) as { theme: Theme; setTheme: SetTheme },
-    [theme, setTheme, systemTheme]
-  );
+  return useMemo(() => {
+    return {
+      theme: theme === "system" ? systemTheme : theme,
+      setTheme,
+    } as { theme: Theme; setTheme: SetTheme };
+  }, [theme, setTheme, systemTheme]);
 };

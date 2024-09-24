@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FiPackage } from "react-icons/fi";
 
 import { ModeToggle } from "../dark-mode/mode-toggle";
-import { Button } from "../ui/button";
+import { AuthButton } from "./auth-button";
 
 export const Navbar = () => {
   type PagesType = "/" | "/profile";
@@ -29,10 +29,7 @@ export const Navbar = () => {
       </ul>
       <div className="flex items-center gap-x-3">
         <ModeToggle />
-        <Button variant="outline" size="sm">
-          Sign Up
-        </Button>
-        <Button size="sm">Login</Button>
+        <AuthButton />
       </div>
     </nav>
   );
