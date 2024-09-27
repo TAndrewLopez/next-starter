@@ -1,22 +1,34 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { redirect } from "next/navigation";
+
+import options from "@/config/auth";
+import { getServerSession } from "next-auth";
+import { FiPackage } from "react-icons/fi";
+
+import { LoginClient } from "@/components/client/login-client";
 
 const LandingPage = async () => {
+  const session = await getServerSession(options);
+  if (session) return redirect("/profile");
+
   return (
-    <Card className="mx-auto mt-4 w-[350px]">
-      <CardHeader>
-        <CardTitle>Next.js Starter</CardTitle>
-        <CardDescription>A simple starter for Next.js</CardDescription>
-      </CardHeader>
-      <CardContent>Content</CardContent>
-      <CardFooter className="flex justify-between">Footer</CardFooter>
-    </Card>
+    <div className="flex h-full">
+      <div className="m-4 flex flex-1 rounded-lg">
+        <div className="hidden flex-1 flex-col justify-between rounded-bl-lg rounded-tl-lg border-b border-l border-t bg-neutral-100 p-10 dark:border-neutral-800 dark:bg-zinc-900 lg:flex">
+          <div className="flex items-center gap-x-2">
+            <FiPackage className="size-5" />
+            <p>Next.js Starter</p>
+          </div>
+          <div>
+            &quot;This library has saved me countless hours of work and helped
+            me deliver stunning designs to my clients faster than ever
+            before.&quot;
+          </div>
+        </div>
+        <div className="flex flex-1 items-center justify-center rounded-lg border p-10 dark:border-neutral-800 lg:rounded-bl-none lg:rounded-tl-none">
+          <LoginClient />
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-import { useSystemTheme } from "@/hooks/use-system-theme";
+import { Switch } from "@/components/ui/switch";
 
-import { Switch } from "./ui/switch";
+import { useSystemTheme } from "@/hooks/use-system-theme";
 
 export const ModeSwitcher = () => {
   const [mounted, setMounted] = useState(false);

@@ -8,9 +8,7 @@ jiti("./src/env/server.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    typedRoutes: true,
-  },
+  experimental: {},
 };
 
 export default nextConfig;

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
-import { Navbar } from "@/components/navbar/navbar";
+import { Navbar } from "@/components/client/navbar/navbar";
 import { Providers } from "@/components/providers/providers";
 
 import "./globals.css";

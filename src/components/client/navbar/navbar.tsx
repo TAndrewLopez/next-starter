@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 
+import { HrefPages } from "@/app/types/next-auth";
 import { useSession } from "next-auth/react";
 import { FiPackage } from "react-icons/fi";
 
@@ -11,9 +12,7 @@ import { AuthButton } from "./auth-button";
 export const Navbar = () => {
   const { status } = useSession();
 
-  type PagesType = "/" | "/profile" | "/guestbook";
-  type itemType = { label: string; href: PagesType };
-
+  type itemType = { label: string; href: HrefPages };
   const menuItems: itemType[] = [{ label: "Home", href: "/" }];
 
   if (status === "authenticated") {
@@ -37,8 +36,8 @@ export const Navbar = () => {
         ))}
       </ul>
       <div className="flex items-center gap-x-3">
-        <ModeToggle />
         <AuthButton minimal={false} />
+        <ModeToggle />
       </div>
     </nav>
   );
