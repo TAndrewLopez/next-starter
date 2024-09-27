@@ -1,10 +1,12 @@
 "use client";
 
+import { useSession } from "next-auth/react";
+import { FiPackage } from "react-icons/fi";
+import { TbLoader2 } from "react-icons/tb";
+
 import Link from "next/link";
 
 import { HrefPages } from "@/app/types/next-auth";
-import { useSession } from "next-auth/react";
-import { FiPackage } from "react-icons/fi";
 
 import { ModeToggle } from "../dark-mode/mode-toggle";
 import { AuthButton } from "./auth-button";
@@ -13,12 +15,23 @@ export const Navbar = () => {
   const { status } = useSession();
 
   type itemType = { label: string; href: HrefPages };
-  const menuItems: itemType[] = [{ label: "Home", href: "/" }];
+  const publicPages: itemType[] = [{ label: "Home", href: "/" }];
+  const privatePages: itemType[] = [
+    { label: "Dashboard", href: "/dashboard" },
+    { label: "Profile", href: "/profile" },
+    { label: "Guestbook", href: "/guestbook" },
+  ];
 
+  let menuItems: itemType[] = [];
   if (status === "authenticated") {
-    menuItems.push(
-      { label: "Profile", href: "/profile" },
-      { label: "Guestbook", href: "/guestbook" }
+    menuItems = [...publicPages.slice(1), ...privatePages];
+  }
+
+  if (status === "loading") {
+    return (
+      <nav className="flex items-center justify-center p-4">
+        <TbLoader2 className="size-8 animate-spin" />
+      </nav>
     );
   }
 
