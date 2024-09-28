@@ -1,26 +1,37 @@
 # Next.js Starter Project
 
-## Core Tech
+A modern web application starter built with Next.js, designed to accelerate development with a focus on performance, scalability, and developer experience. This project provides a robust setup for authentication, styling, database interactions, and component libraries, with best practices and tools integrated for a smooth development workflow.
 
-Next.js
-TailwindCSS
-Drizzle
-Next Auth
+## 🚀 Core Technologies
 
-## Development Tech
+- **Next.js**
+- **TailwindCSS**
+- **Drizzle**
+- **Next Auth**
 
-TypeScript
-Docker
-Shadcn UI
-Zod
-Conform-to
+## 🛠️ Development Technologies
 
+- **TypeScript**
+- **Docker**
 
-Clone repo:
+## 📦 Component Library
+
+- **Shadcn UI**
+
+## ✅ Validation
+- **Conform-to**
+- **Zod**
+
+## 📂 Getting Started
+
+1. **Clone the repository:**
+
 ```
 git clone git@github.com:TAndrewLopez/next-starter.git
+cd next-starter
 ```
-Create .env
+2. **Create .env**
+
 ```
 # DEVELOPMENT
 NODE_ENV="development"
@@ -41,16 +52,17 @@ DB_PASSWORD=
 DB_PORT=5432
 DB_USER=
 ```
+3. **Run the Docker containers**
 
 ```
 docker compose-up
 ```
-
+4. **Generate Drizzle Migrations**
 
 ```
 pnpm drizzle-kit generate
 ```
-
+5. **Run database migrations**
 ```
 pnpm db:migrate
 ```
