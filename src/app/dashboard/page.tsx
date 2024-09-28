@@ -1,3 +1,5 @@
+import { requireAuth } from "@/utils/require-auth";
+
 import {
   Card,
   CardDescription,
@@ -5,7 +7,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const DashboardPage = () => {
+const DashboardPage = async () => {
+  await requireAuth();
+
   return (
     <Card className="mx-auto mt-4 w-[350px]">
       <CardHeader>

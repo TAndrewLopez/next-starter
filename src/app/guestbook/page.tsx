@@ -1,4 +1,5 @@
 import db from "@/db";
+import { requireAuth } from "@/utils/require-auth";
 import { FaRegUserCircle } from "react-icons/fa";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -14,6 +15,7 @@ import {
 import GuestbookClient from "./page.client";
 
 const GuestbookPage = async () => {
+  await requireAuth();
   const entries = await db.query.GuestbookEntries.findMany({
     orderBy(fields, operators) {
       return operators.desc(fields.createdAt);

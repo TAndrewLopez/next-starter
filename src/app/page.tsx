@@ -1,8 +1,8 @@
-import { redirect } from "next/navigation";
-
 import options from "@/config/auth";
 import { getServerSession } from "next-auth";
 import { FiPackage } from "react-icons/fi";
+
+import { redirect } from "next/navigation";
 
 import { LoginClient } from "@/components/client/login-client";
 
@@ -19,9 +19,12 @@ const LandingPage = async () => {
             <p>Next.js Starter</p>
           </div>
           <div>
-            &quot;This library has saved me countless hours of work and helped
-            me deliver stunning designs to my clients faster than ever
-            before.&quot;
+            <p>
+              &quot;This library has saved me countless hours of work and helped
+              me deliver stunning designs to my clients faster than ever
+              before.&quot;
+            </p>
+            <p className="text-right font-semibold">- D. Quincy</p>
           </div>
         </div>
         <div className="flex flex-1 items-center justify-center rounded-lg border p-10 dark:border-neutral-800 lg:rounded-bl-none lg:rounded-tl-none">
