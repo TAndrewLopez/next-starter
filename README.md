@@ -67,3 +67,7 @@ pnpm drizzle-kit generate
 ```
 pnpm db:migrate
 ```
+6. **Run project**
+```
+pnpm dev
+```
