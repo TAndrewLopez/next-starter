@@ -4,7 +4,7 @@ import { FiPackage } from "react-icons/fi";
 
 import { redirect } from "next/navigation";
 
-import { LoginClient } from "@/components/client/login-client";
+import { LoginClient } from "@/components/login-client";
 
 const LandingPage = async () => {
   const session = await getServerSession(options);

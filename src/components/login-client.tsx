@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
-
 import { signIn } from "next-auth/react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
-import { Button } from "../ui/button";
+import Link from "next/link";
+
+import { Button } from "./ui/button";
 
 export const LoginClient = () => {
   return (
