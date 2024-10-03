@@ -52,10 +52,10 @@ DB_PASSWORD=
 DB_PORT=5432
 DB_USER=
 ```
-3. **Run the Docker containers**
+3. **Run the Docker container(s)**
 
 ```
-docker compose-up
+docker compose up
 ```
 4. **Generate Drizzle Migrations**
 
