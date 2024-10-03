@@ -27,8 +27,8 @@ A modern web application starter built with Next.js, designed to accelerate deve
 1. **Clone the repository:**
 
 ```
-git clone git@github.com:TAndrewLopez/next-starter.git
-cd next-starter
+git clone git@github.com:TAndrewLopez/next-starter.git project-name
+cd project-name
 ```
 2. **Create .env**
 
@@ -37,7 +37,7 @@ cd next-starter
 NODE_ENV="development"
 
 # AUTH
-NEXTAUTH_URL=
+NEXTAUTH_URL="http://localhost:3000"
 NEXTAUTH_SECRET=
 
 # GOOGLE PROVIDER 
