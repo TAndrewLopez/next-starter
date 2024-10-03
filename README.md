@@ -29,6 +29,7 @@ A modern web application starter built with Next.js, designed to accelerate deve
 ```
 git clone git@github.com:TAndrewLopez/next-starter.git project-name
 cd project-name
+pnpm install
 ```
 2. **Create .env**
 
